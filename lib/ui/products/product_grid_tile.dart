@@ -4,23 +4,30 @@ import 'package:flutter/material.dart';
 
 import '../../models/product.dart';
 
+import 'product_detail_screen.dart';
+
 class ProductGridTile extends StatelessWidget {
   const ProductGridTile(
     this.product, {
-    super.key,
-  });
+      super.key,
+    }
+    
+  );
 
   final Product product;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius:  BorderRadius.circular(10),
       child: GridTile(
         footer: buildGridFooterBar(context),
         child: GestureDetector(
           onTap: () {
-            print('Go to product detail screen');
+            Navigator.of(context).pushNamed(
+              ProductDetailScreen.routeName,
+              arguments: product.id,
+            );
           },
           child: Image.network(
             product.imageUrl,
