@@ -37,6 +37,7 @@ class ProductsManager {
       isFavorite: true,
     ),
   ];
+
   int get itemCount {
     return _items.length;
   }
