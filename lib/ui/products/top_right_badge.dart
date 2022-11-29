@@ -12,7 +12,7 @@ class TopRightBadge extends StatelessWidget {
   final Object data;
   final Color? color;
 
-  @override
+  @override 
   Widget build(BuildContext context) {
     return Stack(
       alignment: Alignment.center,
