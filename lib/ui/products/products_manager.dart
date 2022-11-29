@@ -1,8 +1,8 @@
-import '../../models/product.dart';
 import 'package:flutter/foundation.dart';
+import '../../models/product.dart';
 
 class ProductsManager with ChangeNotifier {
-    final List<Product> _items = [
+  final List<Product> _items = [
     Product(
       id: 'p1',
       title: 'Red Shirt',
@@ -73,8 +73,8 @@ class ProductsManager with ChangeNotifier {
   }
 
   void toggleFavoriteStatus(Product product) {
-    final saveStatus = product.isFavorite;
-    product.isFavorite = !saveStatus;
+    final savedStatus = product.isFavorite;
+    product.isFavorite = !savedStatus;
   }
 
   void deleteProduct(String id) {

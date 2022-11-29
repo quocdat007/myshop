@@ -7,5 +7,6 @@ export 'orders/orders_screen.dart';
 export 'orders/orders_manager.dart';
 
 export 'cart/cart_screen.dart';
-export 'cart/cart_screen.dart';
+export 'cart/cart_manager.dart';
 
+export 'products/edit_product_screen.dart';

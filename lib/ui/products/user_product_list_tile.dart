@@ -1,18 +1,17 @@
-// ignore_for_file: avoid_print
-
 import 'package:flutter/material.dart';
-import 'package:myshop/ui/products/products_manager.dart';
-import '../../models/product.dart';
 import 'package:provider/provider.dart';
+
+import '../../models/product.dart';
+import 'products_manager.dart';
+import 'edit_product_screen.dart';
 
 class UserProductListTile extends StatelessWidget {
   final Product product;
 
   const UserProductListTile(
     this.product, {
-      super.key,
-    }
-  );
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -43,23 +42,26 @@ class UserProductListTile extends StatelessWidget {
           ..showSnackBar(
             const SnackBar(
               content: Text(
-                "Product deleted",
+                'Product deleted',
                 textAlign: TextAlign.center,
               ),
-            )
+            ),
           );
       },
       color: Theme.of(context).errorColor,
-      );
+    );
   }
 
   Widget buildEditButton(BuildContext context) {
     return IconButton(
-      onPressed: () {
-        print('Go to edit product screen');
-      }, 
       icon: const Icon(Icons.edit),
+      onPressed: () {
+        Navigator.of(context).pushNamed(
+          EditProductScreen.routeName,
+          arguments: product.id,
+        );
+      },
       color: Theme.of(context).primaryColor,
-      );
+    );
   }
 }
